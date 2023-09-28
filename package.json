@@ -1,0 +1,27 @@
+{
+  "name": "tienda-online",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "bulma": "^0.9.4",
+    "pinia": "^2.1.6",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.3.4",
+    "@vitejs/plugin-vue-jsx": "^3.0.2",
+    "less": "^4.2.0",
+    "less-loader": "^11.1.3",
+    "sass": "^1.68.0",
+    "sass-loader": "^13.3.2",
+    "stylus": "^0.60.0",
+    "stylus-loader": "^7.1.3",
+    "vite": "^4.4.9"
+  }
+}
