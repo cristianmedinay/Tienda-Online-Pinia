@@ -15,11 +15,14 @@
                         <div class="media-content">
                             <p class="title is-4">{{ producto.name }}</p>
                             <p class="subtitle is-6">@johnsmith</p>
+                            <p>{{ countDeporte }}</p>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+       
     </div>
 </template>
 
@@ -28,13 +31,30 @@
 import { useArticulosStore } from '@/stores/ArticulosStore.js'
 import { mapState } from 'pinia'
 
-
 export default {
-
     
-    computed:{
-        ...mapState(useArticulosStore,['getListaArticulos'])
+    data(){
+
+     
+        return{
+            productos:[],
+            
+            data: ''
+            
+        }
     },
+    computed:{
+        ...mapState(useArticulosStore,['getListaArticulos']),
+        ...mapState(useArticulosStore,['countDeporte']),
+    },
+     mounted() {
+    
+        
+        console.log(this.countDeporte[0].category.map((e)=>e.name))
+    },
+    created(){
+        
+    }
 }
 </script>
 

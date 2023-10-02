@@ -1,12 +1,18 @@
 import {defineStore} from 'pinia'
-
+//
 //STATE
 export const useArticulosStore = defineStore('articulosStore',{
     state:()=>({
-        listaArticulos:[]
+        listaArticulos:[],
+        deporte:[],
+        informatica:[],
+        
     }),
     getters:{
         getListaArticulos(state){
+            return state.listaArticulos
+        },
+        countDeporte(state){        
             return state.listaArticulos
         }
     },

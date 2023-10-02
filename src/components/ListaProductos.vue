@@ -17,7 +17,8 @@
                     <div class="media">                
                         <div class="media-content">
                             <p class="title is-4">{{producto.name}}</p>
-                            <p class="subtitle is-6">{{ producto.category.name }}</p>
+                            
+                            <p class="subtitle is-6">{{ producto.category[0].name }}</p>
                         </div>
                     </div>
 
@@ -45,14 +46,17 @@
     export default {
         data(){
             return{
-                productos:[]
+                productos:[],
+
             }
         },
         computed:{
-            ...mapState(useArticulosStore,['getListaArticulos'])
+            ...mapState(useArticulosStore,['getListaArticulos']),
+            ...mapState(useArticulosStore,['countDeporte']),
         },
         methods:{
             ...mapActions(useArticulosStore,['addItem']),
+            //https://servicios.neunapp.com/servicio/1/
             async cargarProductos (){
                 fetch("https://servicios.neunapp.com/api/tienda/productos/lista/")
                 .then((response) => {
